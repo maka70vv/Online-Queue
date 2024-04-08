@@ -24,10 +24,12 @@ public class Users implements UserDetails {
     private String firstname;
     private String lastname;
     @Column(unique = true)
-    private String phone;
+    private String username;
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToOne
+    private Department department;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -36,7 +38,7 @@ public class Users implements UserDetails {
 
     @Override
     public String getUsername() {
-        return phone;
+        return username;
     }
 
     @Override

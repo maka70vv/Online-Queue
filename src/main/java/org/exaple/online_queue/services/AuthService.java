@@ -52,4 +52,10 @@ public class AuthService {
                 .token(jwtToken)
                 .build();
     }
+
+    public void assignUserRole(Long userId, String role) throws Exception {
+        Users user = repository.findById(userId).orElseThrow(() -> new Exception("User not found with id: " + userId));
+        user.setRole(Role.valueOf(role));
+        repository.save(user);
+    }
 }

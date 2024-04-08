@@ -6,10 +6,7 @@ import org.exaple.online_queue.responces.AuthResponse;
 import org.exaple.online_queue.responces.RegisterRequest;
 import org.exaple.online_queue.services.AuthService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -30,5 +27,11 @@ public class AuthController {
             @RequestBody AuthRequest request
     ){
         return ResponseEntity.ok(authService.auth(request));
+    }
+
+    @PostMapping("/assignRole")
+    public ResponseEntity<?> assignUserRole(@RequestParam("userId") Long userId, @RequestParam("role") String role) throws Exception {
+        authService.assignUserRole(userId, role);
+        return ResponseEntity.ok("Role assigned successfully");
     }
 }
