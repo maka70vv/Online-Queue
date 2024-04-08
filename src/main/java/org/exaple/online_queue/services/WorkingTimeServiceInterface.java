@@ -10,4 +10,5 @@ public interface WorkingTimeServiceInterface {
     WorkingTime addWorkingTime(WorkingTime workingTime);
     WorkingTime updateWorkingTime(WorkingTime workingTime);
     WorkingTime removeWorkingTime(String id);
+    List<WorkingTime> addWorkingTimes(List<WorkingTime> workingTimes);
 }
