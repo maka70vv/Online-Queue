@@ -18,12 +18,13 @@ public class Queue {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
-    private Service service;
+    private Services service;
     private boolean workInProgress = false;
     private boolean isFinished = false;
     private LocalDateTime creationTime;
     private LocalDateTime inWorkStarted;
     private LocalDateTime inWorkEnded;
+    private Integer timeInWork;
     @OneToOne
     private Users user;
     private String queueName;
