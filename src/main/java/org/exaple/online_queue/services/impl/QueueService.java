@@ -48,7 +48,7 @@ public class QueueService implements QueueServiceInterface {
     @Override
     public Queue addQueue(Queue queue) {
         if (queue.getService() != null && queue.getService().getId() != null) {
-            Service service = serviceRepository.findById(queue.getService().getId()).orElse(null);
+            Services service = serviceRepository.findById(queue.getService().getId()).orElse(null);
             queue.setService((Services) service);
         }
 
