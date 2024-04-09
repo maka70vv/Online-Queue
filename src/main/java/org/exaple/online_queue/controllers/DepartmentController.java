@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/spi/v1/departments")
+@RequestMapping("/api/v1/departments")
 @AllArgsConstructor
 public class DepartmentController {
     private final DepartmentService departmentService;

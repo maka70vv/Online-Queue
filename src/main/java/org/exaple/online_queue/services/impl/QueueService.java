@@ -93,7 +93,7 @@ public class QueueService implements QueueServiceInterface {
 
     @Override
     public List<Queue> getActualQueues() {
-        Queue queue = queueRepository.findByWorkInProgressAndFinishedIs(false, false);
+        Queue queue = queueRepository.findByWorkInProgressAndIsFinished(false, false);
         List<Queue> queues = new ArrayList<>();
         if (queue != null) {
             queues.add(queue);

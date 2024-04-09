@@ -9,5 +9,5 @@ public interface QueueRepository extends JpaRepository<Queue, Long> {
     Queue findByQueueName(String queueName);
     Queue findByUserId(Long userId);
     Queue findByCreationTimeBetween(LocalDateTime startOfToday, LocalDateTime endOfToday);
-    Queue findByWorkInProgressAndFinishedIs(Boolean workInProgress, Boolean isFinished);
+    Queue findByWorkInProgressAndIsFinished(Boolean workInProgress, Boolean isFinished);
 }
