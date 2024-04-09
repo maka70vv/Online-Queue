@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Service {
+public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
